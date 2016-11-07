@@ -82,6 +82,15 @@ $(document).ready(function () {
 			$(span).text('No se puede utilizar esa contraseña');
 			$("#input-password").parent().append(span);
 		}
+	});	
+	
+	$('select').on('change', function() {
+		console.log('Cambio valor');
+		$(span).remove();
+		//verifica si la opcion del select esta vacia
+		if ($('select').val().trim() === '0') {
+			$(span).text('Debes seleccionar un tipo de bici');
+			$("select").parent().append(span);
+		}
 	});
-
 });
